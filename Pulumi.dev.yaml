@@ -1,6 +1,0 @@
-encryptionsalt: v1:I2XXWlu+NuQ=:v1:XnPgfq+GPomlKybW:keRHXcx9/ydiM62BhCl+6hlKlohrQQ==
-config:
-  aws:region: ap-southeast-2
-  vpc_rds_dmz:dbInstanceType: db.t3.small
-  vpc_rds_dmz:dbPassword:
-    secure: v1:RyThn06/gyWns3Wr:FzRLr6LgaXhRSPSi1muKH7UvS93i2Xci9fKX54s5mg==
