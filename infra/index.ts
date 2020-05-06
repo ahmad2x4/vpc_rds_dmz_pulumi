@@ -40,14 +40,6 @@ const rds = new aws.rds.Instance(`database-dev`, {
 });
 
 
-const ebAppDeployBucket = new aws.s3.Bucket("eb-app-deploy", {});
-
-const ebAppDeployObject = new aws.s3.BucketObject("default", {
-  bucket: ebAppDeployBucket.id,
-  key: "deployment.zip",
-  source: new pulumi.asset.FileAsset("../deployment.zip"),
-});
-
 const instanceProfileRole = new aws.iam.Role("eb-ec2-role", {
   name: "eb-ec2-role",
   description: "Role for EC2 managed by EB",
@@ -64,6 +56,15 @@ const instanceProfileRole = new aws.iam.Role("eb-ec2-role", {
             }
         ]
     }`,
+});
+
+
+const ebAppDeployBucket = new aws.s3.Bucket("eb-app-deploy", {});
+
+const ebAppDeployObject = new aws.s3.BucketObject("default", {
+  bucket: ebAppDeployBucket.id,
+  key: "deployment.zip",
+  source: new pulumi.asset.FileAsset("../deployment.zip"),
 });
 
 const instanceProfile = new aws.iam.InstanceProfile("eb-ec2-instance-profile", {
