@@ -116,3 +116,5 @@ dist
 .pnp.*
 
 deployment.zip
+
+**/.DS_Store
